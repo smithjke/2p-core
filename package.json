@@ -1,0 +1,19 @@
+{
+  "name": "2p-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smithjke/2p-core.git"
+  },
+  "author": "smithjke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smithjke/2p-core/issues"
+  },
+  "homepage": "https://github.com/smithjke/2p-core#readme"
+}
