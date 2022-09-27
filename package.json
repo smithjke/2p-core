@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "up:patch": "yarn tsc && yarn version --patch && git push --tags"
+    "up:patch": "yarn version --patch && git push --tags"
   },
   "repository": {
     "type": "git",
