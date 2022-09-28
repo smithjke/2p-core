@@ -1,12 +1,22 @@
 {
   "name": "2p-core",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "exports": {
+    "*": "./dist/*"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*"
+      ]
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "up:patch": "yarn version --patch && git push && git push --tags"
