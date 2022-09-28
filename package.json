@@ -1,22 +1,12 @@
 {
   "name": "2p-core",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "exports": {
-    "./dog/*": "./dist/dog/*"
-  },
-  "typesVersions": {
-    "*": {
-      "dog/*": [
-        "dist/dog/*"
-      ]
-    }
-  },
   "scripts": {
     "prepublish": "yarn tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
