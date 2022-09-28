@@ -1,6 +1,6 @@
 {
   "name": "2p-core",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
@@ -8,6 +8,7 @@
     "dist"
   ],
   "scripts": {
+    "prepare": "yarn tsc",
     "prepublish": "yarn tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "up:patch": "yarn version --patch && git push && git push --tags"
