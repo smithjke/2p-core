@@ -1,6 +1,6 @@
 {
   "name": "2p-core",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "build",
+    "prepare": "npm run build",
     "prepublish": "build",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
