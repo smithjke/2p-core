@@ -1,6 +1,6 @@
 {
   "name": "2p-core",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "dist"
   ],
   "exports": {
-    "./": "./dist/"
+    "./dog": "./dist/dog"
   },
   "typesVersions": {
     "*": {
