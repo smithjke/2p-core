@@ -1,6 +1,6 @@
 {
   "name": "2p-core",
-  "version": "0.2.20",
+  "version": "0.2.21",
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "prepare": "echo ABOBA prepare >> aboba.txt",
-    "preinstall": "echo ABOBA preinstall >> aboba.txt",
+    "preinstall": "tsc",
     "prepack": "echo ABOBA prepack >> aboba.txt",
     "prepublishOnly": "echo ABOBA prepublishOnly >> aboba.txt",
     "prepublish": "echo ABOBA prepublish >> aboba.txt",
