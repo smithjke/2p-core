@@ -4,13 +4,7 @@
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
-  "typesVersions": {
-    ">=4.0": {
-      "*": [
-        "dist/*"
-      ]
-    }
-  },
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
