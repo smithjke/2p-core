@@ -11,10 +11,25 @@
       "node": "./dist/index.js",
       "require": "./dist/index.js"
     },
-    "./dog": {
-      "types": "./dist/dog/index.d.ts",
-      "node": "./dist/dog/index.js",
-      "require": "./dist/dog/index.js"
+    "./api": {
+      "types": "./dist/api/index.d.ts",
+      "node": "./dist/api/index.js",
+      "require": "./dist/api/index.js"
+    },
+    "./crud": {
+      "types": "./dist/crud/index.d.ts",
+      "node": "./dist/crud/index.js",
+      "require": "./dist/crud/index.js"
+    },
+    "./di": {
+      "types": "./dist/di/index.d.ts",
+      "node": "./dist/di/index.js",
+      "require": "./dist/di/index.js"
+    },
+    "./json-rpc": {
+      "types": "./dist/json-rpc/index.d.ts",
+      "node": "./dist/json-rpc/index.js",
+      "require": "./dist/json-rpc/index.js"
     }
   },
   "files": [
@@ -22,15 +37,7 @@
     "dist/**/!(*.tsbuildinfo)"
   ],
   "scripts": {
-    "prepare": "echo ABOBA prepare >> aboba.txt",
-    "preinstall": "echo ABOBA preinstall >> aboba.txt && tsc",
-    "prepack": "echo ABOBA prepack >> aboba.txt",
-    "prepublishOnly": "echo ABOBA prepublishOnly >> aboba.txt",
-    "prepublish": "echo ABOBA prepublish >> aboba.txt",
-    "preversion": "echo ABOBA preversion >> aboba.txt",
-    "prerestart": "echo ABOBA prerestart >> aboba.txt",
-    "postpack": "echo ABOBA postpack >> aboba.txt",
-    "postpublish": "echo ABOBA postpublish >> aboba.txt",
+    "preinstall": "tsc",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "up:patch": "yarn version --patch && git push && git push --tags"
@@ -49,6 +56,7 @@
     "typescript": "^4.8.3"
   },
   "dependencies": {
-    "rxjs": "^7.5.7"
+    "@sinclair/typebox": "^0.24.44",
+    "axios": "^0.27.2"
   }
 }

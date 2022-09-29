@@ -1,6 +1,0 @@
-{
-  "name": "2p-core/dog",
-  "types": "../dist/dog/index.d.ts",
-  "main": "../dist/dog/index.js",
-  "sideEffects": false
-}

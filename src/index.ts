@@ -1,6 +1,3 @@
-export const TEST_LOL_KEK = 123;
+import * as TPCore from './all';
 
-export type LolKek = {
-  aaa: number;
-  bbb: string;
-};
+export default TPCore;

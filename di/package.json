@@ -1,0 +1,6 @@
+{
+  "name": "2p-core/di",
+  "types": "../dist/di/index.d.ts",
+  "main": "../dist/di/index.js",
+  "sideEffects": false
+}
