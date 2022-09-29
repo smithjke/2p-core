@@ -4,12 +4,32 @@
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
+  "typesVersions": {
+    ">=4.0": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "node": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./dog": {
+      "types": "./dist/dog/index.d.ts",
+      "node": "./dist/dog/index.js",
+      "require": "./dist/dog/index.js"
+    }
+  },
   "files": [
-    "dist"
+    "dist",
+    "dist/**/!(*.tsbuildinfo)"
   ],
   "scripts": {
     "prepare": "echo ABOBA prepare >> aboba.txt",
-    "preinstall": "tsc",
+    "preinstall": "echo ABOBA preinstall >> aboba.txt && tsc",
     "prepack": "echo ABOBA prepack >> aboba.txt",
     "prepublishOnly": "echo ABOBA prepublishOnly >> aboba.txt",
     "prepublish": "echo ABOBA prepublish >> aboba.txt",
@@ -33,5 +53,8 @@
   "homepage": "https://github.com/smithjke/2p-core#readme",
   "devDependencies": {
     "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "rxjs": "^7.5.7"
   }
 }
