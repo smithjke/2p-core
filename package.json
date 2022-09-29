@@ -1,6 +1,6 @@
 {
   "name": "2p-core",
-  "version": "0.2.23",
+  "version": "0.3.0",
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
@@ -40,6 +40,8 @@
     "preinstall": "tsc",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "up:major": "yarn version --major && git push && git push --tags",
+    "up:minor": "yarn version --minor && git push && git push --tags",
     "up:patch": "yarn version --patch && git push && git push --tags"
   },
   "repository": {
