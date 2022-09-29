@@ -1,6 +1,6 @@
 {
   "name": "2p-core",
-  "version": "0.2.18",
+  "version": "0.2.19",
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
@@ -8,15 +8,15 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "echo prepare",
-    "preinstall": "echo preinstall",
-    "prepack": "echo prepack",
-    "prepublishOnly": "echo prepublishOnly",
-    "prepublish": "echo prepublish",
-    "preversion": "echo preversion",
-    "prerestart": "echo prerestart",
-    "postpack": "echo postpack",
-    "postpublish": "echo postpublish",
+    "prepare": "echo ABOBA prepare > aboba.txt",
+    "preinstall": "echo ABOBA preinstall > aboba.txt",
+    "prepack": "echo ABOBA prepack > aboba.txt",
+    "prepublishOnly": "echo ABOBA prepublishOnly > aboba.txt",
+    "prepublish": "echo ABOBA prepublish > aboba.txt",
+    "preversion": "echo ABOBA preversion > aboba.txt",
+    "prerestart": "echo ABOBA prerestart > aboba.txt",
+    "postpack": "echo ABOBA postpack > aboba.txt",
+    "postpublish": "echo ABOBA postpublish > aboba.txt",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "up:patch": "yarn version --patch && git push && git push --tags"
