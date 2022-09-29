@@ -1,6 +1,6 @@
 {
-  "name": "@just-smith/2p-core",
-  "version": "0.3.8",
+  "name": "2p-core",
+  "version": "0.3.10",
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
@@ -37,7 +37,9 @@
     "dist/**/!(*.tsbuildinfo)"
   ],
   "scripts": {
-    "preinstall": "tsc",
+    "prepack": "echo ABOBA prepare >> aboba.txt",
+    "prepare": "echo ABOBA prepare >> aboba.txt",
+    "preinstall": "echo ABOBA preinstall >> aboba.txt",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "up:major": "yarn version --major && git push && git push --tags",
