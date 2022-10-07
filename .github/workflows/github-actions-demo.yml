@@ -15,4 +15,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Test list without params
+        run: pwd && ls -la
       - run: echo "🍏 This job's status is ${{ job.status }}."
