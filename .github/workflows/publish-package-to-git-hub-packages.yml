@@ -17,12 +17,10 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
           scope: '@smithjke'
+      - run: npm ci
+      - run: npm run build
       - run: ls -la
-      - run: yarn
-      - run: ls -la
-      - run: yarn build
-      - run: ls -la
-      - run: yarn publish
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: ls -la
