@@ -39,7 +39,7 @@
   "scripts": {
     "prepack": "echo ABOBA prepare >> aboba.txt",
     "prepare": "echo ABOBA prepare >> aboba.txt",
-    "preinstall": "echo ABOBA preinstall >> aboba.txt && tsc",
+    "preinstall": "echo ABOBA preinstall >> aboba.txt",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "up:major": "yarn version --major && git push && git push --tags",
