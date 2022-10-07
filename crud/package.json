@@ -1,5 +1,5 @@
 {
-  "name": "2p-core/crud",
+  "name": "@smithjke/2p-core/crud",
   "types": "../dist/crud/index.d.ts",
   "main": "../dist/crud/index.js",
   "sideEffects": false

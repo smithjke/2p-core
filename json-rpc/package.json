@@ -1,5 +1,5 @@
 {
-  "name": "2p-core/json-rpc",
+  "name": "@smithjke/2p-core/json-rpc",
   "types": "../dist/json-rpc/index.d.ts",
   "main": "../dist/json-rpc/index.js",
   "sideEffects": false

@@ -1,1 +1,1 @@
-# 2p-core
+# @smithjke/2p-core

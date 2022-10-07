@@ -1,5 +1,5 @@
 {
-  "name": "2p-core",
+  "name": "@smithjke/2p-core",
   "version": "0.3.11",
   "description": "",
   "main": "dist/index.ts",

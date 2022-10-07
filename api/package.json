@@ -1,5 +1,5 @@
 {
-  "name": "2p-core/api",
+  "name": "@smithjke/2p-core/api",
   "types": "../dist/api/index.d.ts",
   "main": "../dist/api/index.js",
   "sideEffects": false
