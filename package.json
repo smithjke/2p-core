@@ -4,7 +4,6 @@
   "description": "",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
-  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
