@@ -10,17 +10,13 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
-      # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
           registry-url: 'https://npm.pkg.github.com'
-          # Defaults to the user or organization that owns the workflow file
           scope: '@smithjke'
-      - run: npm install
-      - run: npm run build
-      - run: ls -la
-      - run: npm publish
+      - run: yarn
+      - run: yarn build
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: ls -la
