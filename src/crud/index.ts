@@ -1,2 +1,2 @@
-export * from './crud';
-export * from './crud-list';
+export * from './common';
+export * from './services';

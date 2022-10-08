@@ -1,6 +1,6 @@
 import { TSchema, Type } from '@sinclair/typebox';
 
-export type CrudListQuery<ORDER_FIELD = string, FILTER = object> = {
+export type CrudFindAllQuery<ORDER_FIELD = string, FILTER = object> = {
   limit?: number;
   offset?: number;
   order?: {
@@ -10,11 +10,11 @@ export type CrudListQuery<ORDER_FIELD = string, FILTER = object> = {
   filter?: FILTER;
 };
 
-export function makeCrudListQuerySchema<OF extends TSchema, F extends TSchema>(field: OF, filter: F) {
+export function makeCrudFindAllQuery<OF extends TSchema, F extends TSchema>(field: OF, filter: F) {
   return Type.Partial(
     Type.Object({
-      limit: Type.Number({ minimum: 0 }),
-      offset: Type.Number({ minimum: 0 }),
+      limit: Type.Integer({ minimum: 0 }),
+      offset: Type.Integer({ minimum: 0 }),
       order: Type.Object({
         field,
         direction: Type.Union([
@@ -27,12 +27,12 @@ export function makeCrudListQuerySchema<OF extends TSchema, F extends TSchema>(f
   );
 }
 
-export type CrudListResult<T> = {
+export type CrudFindAllResult<T> = {
   list: Array<T>;
   total: number;
 };
 
-export function makeCrudListResultSchema<I extends TSchema>(item: I) {
+export function makeCrudFindAllResult<T extends TSchema>(item: T) {
   return Type.Object({
     list: Type.Array(item),
     total: Type.Number({ minimum: 0 }),

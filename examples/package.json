@@ -1,0 +1,6 @@
+{
+  "name": "@smithjke/2p-core/examples",
+  "types": "../dist/examples/index.d.ts",
+  "main": "../dist/examples/index.js",
+  "sideEffects": false
+}

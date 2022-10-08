@@ -31,7 +31,7 @@ export abstract class AxiosService {
       const errors = [...typeCheck.Errors(axiosResponse.data)];
 
       if (errors.length) {
-        throw new Error('Validation error');
+        throw new Error('API Validation Error');
       }
     }
 

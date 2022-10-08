@@ -26,6 +26,11 @@
       "node": "./dist/di/index.js",
       "require": "./dist/di/index.js"
     },
+    "./examples": {
+      "types": "./dist/examples/index.d.ts",
+      "node": "./dist/examples/index.js",
+      "require": "./dist/examples/index.js"
+    },
     "./json-rpc": {
       "types": "./dist/json-rpc/index.d.ts",
       "node": "./dist/json-rpc/index.js",
@@ -38,6 +43,7 @@
     "api",
     "crud",
     "di",
+    "examples",
     "json-rpc"
   ],
   "scripts": {
