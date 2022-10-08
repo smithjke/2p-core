@@ -1,4 +1,4 @@
-import { RequestMetaData } from '~/api';
+import { RequestMetaData } from '../../api';
 import {
   AnyCrudType,
   BaseCrudType,

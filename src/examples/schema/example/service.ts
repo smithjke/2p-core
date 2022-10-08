@@ -1,5 +1,5 @@
-import { ApiConfig, RequestMetaData } from '~/api';
-import { CrudAxiosService, CrudService } from '~/crud';
+import { ApiConfig, RequestMetaData } from '../../../api';
+import { CrudAxiosService, CrudService } from '../../../crud';
 import {
   CreateEntity,
   EntityCrudType,

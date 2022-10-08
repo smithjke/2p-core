@@ -1,6 +1,6 @@
 import { TypeCheck, TypeCompiler } from '@sinclair/typebox/compiler';
 import { TSchema } from '@sinclair/typebox';
-import { ApiConfig, AxiosService } from '~/api';
+import { ApiConfig, AxiosService } from '../../api';
 import {
   AnyCrudType,
   BaseCrudType, CrudFindAllQuery, CrudFindAllResult, makeCrudFindAllResult,

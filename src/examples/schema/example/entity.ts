@@ -1,5 +1,5 @@
 import { Static, Type } from '@sinclair/typebox';
-import { CrudSchema, CrudType } from '~/crud';
+import { CrudSchema, CrudType } from '../../../crud';
 
 export const entity = Type.Object({
   id: Type.String(),
