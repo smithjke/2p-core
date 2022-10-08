@@ -1,2 +1,5 @@
-export * from './example';
-export * from './api';
+import * as Example from './example';
+
+export {
+  Example,
+};
