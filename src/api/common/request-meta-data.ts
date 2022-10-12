@@ -1,4 +1,3 @@
-export type RequestMetaData = {
+export interface RequestMetaData {
   bearerToken?: string;
-  ip?: string;
-};
+}
