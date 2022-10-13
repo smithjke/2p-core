@@ -1,7 +1,7 @@
 import { getGlobalObject } from '../core';
 
-const DI_INSTANCES = Symbol('DI_INSTANCES');
-const DI_CREATORS = Symbol('DI_CREATORS');
+const DI_INSTANCES = 'DI_INSTANCES';
+const DI_CREATORS = 'DI_CREATORS';
 
 export type DependencyStrategy = 'singleton' | 'factory';
 
@@ -36,6 +36,10 @@ export function getDependency<T>(key: string): T {
   }
 
   if (dependency.strategy === 'singleton') {
+    if (typeof global[DI_INSTANCES] !== 'object') {
+      global[DI_INSTANCES] = {};
+    }
+
     if (!global[DI_INSTANCES][key]) {
       global[DI_INSTANCES][key] = dependency.creator();
     }
