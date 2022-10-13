@@ -1,4 +1,4 @@
-import { ApiConfig, RequestMetaData } from '../../../api';
+import { ApiConfig } from '../../../api';
 import { CrudAxiosService, CrudService } from '../../../crud';
 import {
   CreateEntity,
@@ -14,12 +14,10 @@ export interface EntityService extends CrudService<EntityCrudType> {
   superUpdate: (
     data: UpdateEntity,
     params: EntityKey,
-    requestMetaData?: RequestMetaData,
   ) => Promise<SingleEntity>;
 
   superCreate: (
     data: CreateEntity,
-    requestMetaData?: RequestMetaData,
   ) => Promise<SingleEntity>;
 }
 
