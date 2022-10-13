@@ -6,26 +6,15 @@ import {
 } from '../common';
 
 export interface CrudService<T extends BaseCrudType> {
-  create: (
-    data: T['createEntity'],
-  ) => Promise<T['singleEntity']>;
+  create: (data: T['createEntity']) => Promise<T['singleEntity']>;
 
-  update: (
-    data: T['updateEntity'],
-    params: T['entityKey'],
-  ) => Promise<T['singleEntity']>;
+  update: (data: T['updateEntity'], params: T['entityKey']) => Promise<T['singleEntity']>;
 
-  remove: (
-    params: T['entityKey'],
-  ) => Promise<void>;
+  remove: (params: T['entityKey']) => Promise<void>;
 
-  findOne: (
-    params: T['entityKey'],
-  ) => Promise<T['singleEntity']>;
+  findOne: (params: T['entityKey']) => Promise<T['singleEntity']>;
 
-  findAll: (
-    query?: CrudFindAllQuery<T['entityOrderField'], T['entityFilter']>,
-  ) => Promise<CrudFindAllResult<T['listedEntity']>>;
+  findAll: (query?: CrudFindAllQuery<T>) => Promise<CrudFindAllResult<T>>;
 }
 
 export type BaseCrudService = CrudService<BaseCrudType>;

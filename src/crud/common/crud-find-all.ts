@@ -1,13 +1,14 @@
 import { TSchema, Type } from '@sinclair/typebox';
+import { BaseCrudType } from './crud';
 
-export type CrudFindAllQuery<ORDER_FIELD = string, FILTER = object> = {
+export type CrudFindAllQuery<T extends BaseCrudType> = {
   limit?: number;
   offset?: number;
   order?: {
-    field: ORDER_FIELD;
+    field: T['entityOrderField'];
     direction: 'asc' | 'desc';
   };
-  filter?: FILTER;
+  filter?: T['entityFilter'];
 };
 
 export function makeCrudFindAllQuery<OF extends TSchema, F extends TSchema>(field: OF, filter: F) {
@@ -27,8 +28,8 @@ export function makeCrudFindAllQuery<OF extends TSchema, F extends TSchema>(fiel
   );
 }
 
-export type CrudFindAllResult<T> = {
-  list: Array<T>;
+export type CrudFindAllResult<T extends BaseCrudType> = {
+  list: Array<T['listedEntity']>;
   total: number;
 };
 

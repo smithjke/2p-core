@@ -3,7 +3,10 @@ import { TSchema } from '@sinclair/typebox';
 import { ApiConfig, AxiosService } from '../../api';
 import {
   AnyCrudType,
-  BaseCrudType, CrudFindAllQuery, CrudFindAllResult, makeCrudFindAllResult,
+  BaseCrudType,
+  CrudFindAllQuery,
+  CrudFindAllResult,
+  makeCrudFindAllResult,
 } from '../common';
 import { BaseCrudService, CrudService } from './crud-service';
 
@@ -84,10 +87,8 @@ export abstract class CrudAxiosService<T extends BaseCrudType> extends AxiosServ
     }, this.validateSingleEntity);
   }
 
-  async findAll(
-    query?: CrudFindAllQuery<T['entityOrderField'], T['entityFilter']>,
-  ): Promise<CrudFindAllResult<T['listedEntity']>> {
-    return this.request<CrudFindAllResult<T['listedEntity']>>({
+  async findAll(query?: CrudFindAllQuery<T>): Promise<CrudFindAllResult<T>> {
+    return this.request<CrudFindAllResult<T>>({
       ...crudApiConfig.findAll,
       query,
     }, this.validateListedEntity);
