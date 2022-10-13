@@ -1,31 +1,47 @@
-const dependencyCreators = {};
+import { getGlobalObject } from '../core';
 
-const dependencies = {};
+const DI_INSTANCES = Symbol('DI_INSTANCES');
+const DI_CREATORS = Symbol('DI_CREATORS');
 
-export function registerDependency(key: string, creator: () => object): void {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  dependencyCreators[key] = creator;
+export type DependencyStrategy = 'singleton' | 'factory';
+
+export function registerDependency(key: string, creator: () => object, strategy: DependencyStrategy = 'singleton'): void {
+  const global: any = getGlobalObject();
+
+  if (typeof global[DI_CREATORS] !== 'object') {
+    global[DI_CREATORS] = {};
+  }
+
+  global[DI_CREATORS][key] = {
+    creator,
+    strategy,
+  };
 }
 
 export function getDependency<T>(key: string): T {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  const creator = dependencyCreators[key];
+  const global: any = getGlobalObject();
 
-  if (!creator) {
-    throw new Error(`${key}: No dependency registered`);
+  if (!global[DI_CREATORS]) {
+    throw new Error('DI: No creators');
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  if (!dependencies[key]) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    dependencies[key] = creator();
+  const dependency = global[DI_CREATORS][key];
+
+  if (!dependency) {
+    throw new Error(`DI: ${key} - No dependency registered`);
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  return dependencies[key];
+  if (dependency.strategy === 'factory') {
+    return dependency.creator();
+  }
+
+  if (dependency.strategy === 'singleton') {
+    if (!global[DI_INSTANCES][key]) {
+      global[DI_INSTANCES][key] = dependency.creator();
+    }
+
+    return global[DI_INSTANCES][key];
+  }
+
+  throw new Error('DI: Unknown strategy');
 }
